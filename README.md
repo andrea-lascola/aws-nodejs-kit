@@ -1,3 +1,5 @@
+![Release](https://github.com/andrea-lascola/aws-nodejs-kit/workflows/Release/badge.svg)
+
 # Aws Nodejs Kit
 
 This is a collection of:
