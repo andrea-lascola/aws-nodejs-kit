@@ -16,13 +16,14 @@
     "dist"
   ],
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/andrea-lascola/aws-nodejs-kit"
+    "type": "git",
+    "url": "https://github.com/andrea-lascola/aws-nodejs-kit"
   },
   "author": "Andrea La Scola",
   "private": false,
   "license": "ISC",
   "devDependencies": {
+    "@semantic-release/git": "^9.0.0",
     "@types/aws-lambda": "^8.10.26",
     "@types/dotenv": "^6.1.1",
     "@types/faker": "^4.1.5",
