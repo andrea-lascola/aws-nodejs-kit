@@ -13,7 +13,7 @@
     "package": "npm run build && npm test && npm pack"
   },
   "author": "Andrea La Scola",
-  "private": true,
+  "private": false,
   "license": "ISC",
   "devDependencies": {
     "@types/aws-lambda": "^8.10.26",
