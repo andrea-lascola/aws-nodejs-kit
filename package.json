@@ -12,6 +12,13 @@
     "build": "tsc",
     "package": "npm run build && npm test && npm pack"
   },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/andrea-lascola/aws-nodejs-kit"
+  },
   "author": "Andrea La Scola",
   "private": false,
   "license": "ISC",
