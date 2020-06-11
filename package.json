@@ -23,7 +23,6 @@
   "private": false,
   "license": "ISC",
   "devDependencies": {
-    "@semantic-release/git": "^9.0.0",
     "@types/aws-lambda": "^8.10.26",
     "@types/dotenv": "^6.1.1",
     "@types/faker": "^4.1.5",
