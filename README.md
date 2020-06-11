@@ -12,6 +12,14 @@ This is a collection of:
   * dynamodb
   * apigw/sns/s3/sqs
 
+### Install
+npm: https://www.npmjs.com/package/aws-nodejs-kit
+
+```npm i aws-nodejs-kit```
+
+
 ### Usage
 
 Please refer to the examples folder 
+
+
