@@ -23,7 +23,9 @@ Table of Contents
 
 ## Installation
 
-`npm i aws-nodejs-kit` 
+npm page: https://www.npmjs.com/package/aws-nodejs-kit
+
+    npm i aws-nodejs-kit 
 
 ## Usage / Reference
 
@@ -233,7 +235,13 @@ handler = async (event: any) => {
 ```
 
 
+
 ## Contributing
+
+    npm install
+    npm run build
+    npm run test
+    npm run test:coverage // tests with coverage report
 
 * PRs are welcome
 * The release process uses github actions and **semantic-release** for automatic tagging/versioning/publishing to npm

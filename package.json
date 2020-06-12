@@ -9,8 +9,7 @@
     "test": "jest",
     "test:coverage": "npm run test -- --collect-coverage",
     "watch": "tsc -w",
-    "build": "tsc",
-    "package": "npm run build && npm test && npm pack"
+    "build": "tsc"
   },
   "files": [
     "dist"
@@ -67,5 +66,15 @@
       "examples"
     ],
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.[t]sx?$"
-  }
+  },
+  "keywords": [
+    "aws",
+    "typescript",
+    "logger",
+    "lambda",
+    "helpers",
+    "utilities",
+    "monads",
+    "middleware"
+  ]
 }
