@@ -25,6 +25,7 @@ jobs:
       with:
         node-version: 12.x
     - run: npm install
+    - run: npm run tsc
     - name: Action For Semantic Release
       uses: cycjimmy/semantic-release-action@v2.4.1
       with:
