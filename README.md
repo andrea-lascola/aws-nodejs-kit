@@ -103,11 +103,46 @@ class Service {
 
 #### Dates
 ```typescript
-// TODO complete doc
+import {dates} from "aws-nodejs-kit";
+
+dates.datePlusTimeframe(new Date(), 1, dates.TimeUnit.hours);
+// 2020-06-15T20:38:14.953Z
+
+dates.dateFromISO(new Date().toISOString());
+// 2020-06-15T19:38:14.956Z
+
+dates.dateInHyphens(new Date());
+// 2020-06-15
+
+dates.dateInSeconds(new Date());
+// 1592249894
+
+dates.dateMinusTimeframe(new Date, 1, dates.TimeUnit.hours);
+// 2020-06-15T18:38:14.960Z
+
+dates.isDateGreaterThan(new Date(), 1, dates.TimeUnit.hours);
+// true
+
+dates.iSOFromTimestamp(new Date().getTime());
+// 2020-06-15T19:41:11.301Z
+
+dates.timestampFromISO(new Date().toISOString());
+// 1592250071303
+
+dates.timeframeToSeconds({amount: 1, timeUnit: dates.TimeUnit.hours});
+// 3600
 ```
+
 #### Exceptions
 ```typescript
-// TODO complete doc
+import {
+    ValidationError,        // Maps to a 400 Status code
+    UseCaseError,           // Maps to a 422 Status code
+    IntegrationError,       // Maps to a 429 Status code
+    NotFoundError,          // Maps to a 400 Status code
+    UnAuthorizedError,      // Maps to a 401 Status code
+    NotImplementedError,    // Used for abstract classes
+} from "aws-nodejs-kit";
 ```
 
 
@@ -138,17 +173,17 @@ export const lambdaHandler = new Lambda(handler)
 // --- Default Middlewares includes:
 
 // Log Lambda input event
-.with(logEvent(container.get<ILogger>(Types.Logger)))
+.with(logEvent(Logger.getInstance()))
 
 // Log Lambda response
-.with(logResponse(container.get<ILogger>(Types.Logger)))
+.with(logResponse(Logger.getInstance()))
 
 // Catch errors globally and return a apigw compatible response (map exceptions to status codes)
-.with(catchErrors(container.get<ILogger>(Types.Logger)))
+.with(catchErrors(Logger.getInstance()))
 
 // Validate Lambda input event against a DTO (class decorated with "class-validator" decorators with static method "fromApiGWEvent")
 // uses validate function to check- you should pass the "validator" function from "class-validator"  
-.with(validateDTO(container.get<ILogger>(Types.Logger),
+.with(validateDTO(Logger.getInstance(),
     (event) => MyDTO.fromApiGWEvent(event),
     validate))
 
