@@ -9,6 +9,10 @@ export class UnAuthorizedError extends Error {
 
 }
 
+export class ConflictError extends Error {
+
+}
+
 export class ValidationError extends Error {
 
     payload: any;
@@ -105,6 +109,9 @@ export const CatchExceptionAndThrowUseCaseError = () => {
                 result = await method!.apply(this, arguments as any);
                 return result;
             } catch (e) {
+                if (e instanceof ConflictError) {
+                    throw new ConflictError();
+                }
                 throw new UseCaseError(e.message);
             }
 
