@@ -66,4 +66,9 @@ handler = async (event: any) => {
      * you are not allowed to see this content
      */
     return new ResponseBuilder().build().resForbidden();
+    /**
+     * http status code -> 409
+     * conflicting resources
+     */
+     return new ResponseBuilder().build().resConflictError();
 };

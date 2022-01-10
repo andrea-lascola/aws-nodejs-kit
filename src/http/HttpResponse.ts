@@ -205,7 +205,7 @@ export class Response {
     resConflictError(payload?: any, errorCode?: string, errorMessage?: string): APIGatewayProxyResult {
         const response: IEnvelopedErrorResponse = {
             error: {
-                errorMessage: errorMessage || "another statement with the same id exists.",
+                errorMessage: errorMessage || "Another object with the same id exists.",
                 errorCode: errorCode || "",
                 payload
             }
