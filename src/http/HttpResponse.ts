@@ -197,6 +197,29 @@ export class Response {
     }
 
     /**
+     * Response KO -> 409
+     * @param payload - error payload
+     * @param errorCode error code
+     * @param errorMessage error string message
+     */
+    resConflictError(payload?: any, errorCode?: string, errorMessage?: string): APIGatewayProxyResult {
+        const response: IEnvelopedErrorResponse = {
+            error: {
+                errorMessage: errorMessage || "another statement with the same id exists.",
+                errorCode: errorCode || "",
+                payload
+            }
+        };
+
+        return {
+            body: JSON.stringify(response),
+            headers: this.headers,
+            statusCode: HttpStatusCode.CONFLICT
+        };
+    }
+
+
+    /**
      * Response NOT FOUND -> 404
      * @param payload - error payload
      * @param errorCode error code
