@@ -13,6 +13,10 @@ export class ConflictError extends Error {
 
 }
 
+export class PreconditionFailedError extends Error {
+
+}
+
 export class ValidationError extends Error {
 
     payload: any;

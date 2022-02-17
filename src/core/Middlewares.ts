@@ -1,4 +1,4 @@
-import {ConflictError, IntegrationError, NotFoundError, UseCaseError, ValidationError} from "./Exceptions";
+import {ConflictError, IntegrationError, NotFoundError, UseCaseError, ValidationError, PreconditionFailedError} from "./Exceptions";
 import {ResponseBuilder} from "../http";
 import {ILogger} from "../log";
 import {DTO} from "../Types";
@@ -53,6 +53,8 @@ export const catchErrors = (logger: ILogger, headers: { [name: string]: string }
             return new ResponseBuilder().setHeaders(headers).build().resIntegrationError({}, "", e.message);
         } else if (e instanceof ConflictError) {
             return new ResponseBuilder().setHeaders(headers).build().resConflictError({}, "", e.message);
+        } else if (e instanceof PreconditionFailedError) {
+            return new ResponseBuilder().setHeaders(headers).build().resPreconditionFailedError({}, "", e.message);
         }
         return new ResponseBuilder().setHeaders(headers).build().resError({}, "", e.message);
     }

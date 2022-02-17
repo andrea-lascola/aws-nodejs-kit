@@ -218,6 +218,28 @@ export class Response {
         };
     }
 
+    /**
+     * Response KO -> 412
+     * @param payload - error payload
+     * @param errorCode error code
+     * @param errorMessage error string message
+     */
+    resPreconditionFailedError(payload?: any, errorCode?: string, errorMessage?: string): APIGatewayProxyResult {
+        const response: IEnvelopedErrorResponse = {
+            error: {
+                errorMessage: errorMessage || "A more recent version of the resource exists.",
+                errorCode: errorCode || "",
+                payload
+            }
+        };
+
+        return {
+            body: JSON.stringify(response),
+            headers: this.headers,
+            statusCode: HttpStatusCode.PRECONDITION_FAILED
+        };
+    }
+
 
     /**
      * Response NOT FOUND -> 404
