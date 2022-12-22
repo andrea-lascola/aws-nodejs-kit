@@ -46,7 +46,7 @@
     "aws-sdk": "^2.803.0",
     "class-validator": "^0.9.1",
     "faker": "^4.1.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "loglevel": "^1.7.1",
     "loglevel-plugin-prefix": "^0.8.4",
     "moment": "^2.29.1"
